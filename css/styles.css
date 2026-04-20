@@ -274,7 +274,8 @@ body.home {
 }
 
 section.list {
-    height: 90vh;
+    height: auto;  /* Muda de 90vh para auto */
+    min-height: 90vh;  /* Opcional: mantém altura mínima em desktop */
     border-top: solid 0.75px white;
     border-left: solid 0.75px white;
 }
@@ -282,7 +283,6 @@ section.list {
 .list article:hover {
     background-color: rgba(255,255,255,0.05);
 }
-
 body.design .card {
     text-decoration: none;
     color: white;
@@ -516,6 +516,12 @@ body.photography {
     
     section.list {
         border-left: none;
+        height: auto;  /* Garante altura automática em mobile */
+        margin-top: 1rem;  /* Dá um pouco de espaço no topo */
+    }
+    
+    body.design .list a {
+        padding: 0.8rem 1rem;
     }
 }
 
