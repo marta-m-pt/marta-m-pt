@@ -274,8 +274,7 @@ body.home {
 }
 
 section.list {
-    height: auto;  /* Muda de 90vh para auto */
-    min-height: 90vh;  /* Opcional: mantém altura mínima em desktop */
+    height: 90vh;
     border-top: solid 0.75px white;
     border-left: solid 0.75px white;
 }
@@ -283,6 +282,7 @@ section.list {
 .list article:hover {
     background-color: rgba(255,255,255,0.05);
 }
+
 body.design .card {
     text-decoration: none;
     color: white;
@@ -320,107 +320,6 @@ body.design .card-type {
 body.design div.container-fluid div {
     padding: 0;
     margin-bottom: 0;
-}
-
-/* ============= PHOTOGRAPHY INDEX ============= */
-body.photography {
-    background-color: var(--primary);
-}
-
-.photo-staggered {
-    display: flex;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto 2rem;
-    padding: 0 2rem;
-}
-
-.photo-column {
-    flex: 1;
-}
-
-.photo-item {
-    cursor: pointer;
-    margin-bottom: 2rem;
-    transition: opacity 0.3s ease;
-}
-
-.photo-number {
-    color: white;
-    font-size: 1rem;
-    letter-spacing: 0.05rem;
-    margin-bottom: 0.5rem;
-    font-weight: 300;
-}
-
-.photo-image {
-    width: 100%;
-    background-color: #333;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 0.5rem;
-    transition: opacity 0.3s ease;
-}
-
-.photo-caption {
-    color: rgba(255,255,255,0.7);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    font-weight: 300;
-}
-
-.photo-item:hover .photo-image {
-    opacity: 0.8;
-}
-
-.photo-item:hover .photo-caption {
-    color: white;
-    transition: color 0.3s ease;
-}
-
-.photo-item:hover .photo-number {
-    color: var(--orange);
-    transition: color 0.3s ease;
-}
-
-@media (max-width: 992px) {
-    .photo-staggered {
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .photo-staggered {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .photo-column {
-        width: 100%;
-    }
-    
-    .photo-item {
-        margin-bottom: 2rem;
-    }
-    
-    .photo-item[style*="margin-top"] {
-        margin-top: 0 !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .photo-staggered {
-        padding: 0 1rem;
-    }
-    
-    .photo-number {
-        font-size: 0.9rem;
-    }
-    
-    .photo-caption {
-        font-size: 0.8rem;
-    }
 }
 
 /* ============= PREVIEW (Design page) ============= */
@@ -516,12 +415,6 @@ body.photography {
     
     section.list {
         border-left: none;
-        height: auto;  /* Garante altura automática em mobile */
-        margin-top: 1rem;  /* Dá um pouco de espaço no topo */
-    }
-    
-    body.design .list a {
-        padding: 0.8rem 1rem;
     }
 }
 
@@ -689,8 +582,6 @@ body.about {
     height: 100%;
     padding: 0;
     display: flex;
-    align-items: center;  /* Centraliza verticalmente */
-    justify-content: center;  /* Centraliza horizontalmente */
     background-color: var(--primary);
 }
 
@@ -699,15 +590,13 @@ body.about {
     text-align: center;
 }
 
-
 .about-image video,
 .about-image img {
-   max-width: 100%;
-    max-height: 80vh;
+    max-width: 100%;
+    max-height: 90vh;
     width: auto;
     height: auto;
-    display: block;  /* Muda de inline-block para block */
-    margin: 0 auto;  /* Centraliza */
+    display: inline-block;
     object-fit: contain;
 }
 
@@ -1181,4 +1070,32 @@ body.project-photography {
         margin-left: 0;
         text-align: left;
     }
+}
+
+/* ============= PHOTOGRAPHY PAGE - SIMPLES 2 COLUNAS ============= */
+.photography .container {
+    max-width: 1200px;
+}
+
+.photography .card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.photography .card:hover .card-img {
+    opacity: 0.85;
+}
+
+.photography .card-title {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+.photography .text-orange {
+    color: var(--orange);
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
 }
